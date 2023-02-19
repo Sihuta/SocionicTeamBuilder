@@ -1,0 +1,23 @@
+<div class="container mt-3">
+    <h4>{{label}}</h4>
+    <div class="d-flex justify-content-center py-3">
+        <form class="container" #myForm="ngForm" (ngSubmit)="submit()">
+            <div class="mb-3">
+                <label for="nameInput" class="form-label">{{ 'ADMIN_PANEL.ENTERPRISE.NAME_COL' | translate }}</label>
+                <input type="text" class="form-control" [(ngModel)]="enterprise.name" name="name" id="nameInput">
+            </div>
+            <div class="mb-3">
+                <label for="locationInput" class="form-label">{{ 'ADMIN_PANEL.ENTERPRISE.LOCATION_COL' | translate }}</label>
+                <input type="text" class="form-control" [(ngModel)]="enterprise.location" name="location" id="locationInput">
+            </div>
+            <div class="mb-3">
+                <label for="activityInput" class="form-label">{{ 'ADMIN_PANEL.ENTERPRISE.ACTIVITY_COL' | translate }}</label>
+                <input type="text" class="form-control" [(ngModel)]="enterprise.activity" name="activity" id="activityInput">
+            </div>
+            <button type="submit" class="btn btn-primary">{{ 'BTN.SUBMIT' | translate }}</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="!formIsValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'FORM_INVALID_MSG' | translate }}
+</div>

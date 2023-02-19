@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SocionicTeamBuilder.Mobile.Views.SocionicTypePage"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             Title="{local:Translate SocionicTypeTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{local:Translate PassTestingBtn}" Command="{Binding PassTestingCommand}" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView Margin="10">
+            <StackLayout>
+                <Label
+                    IsVisible="{Binding SocionicTypeUndefined}"
+                    Text="{local:Translate SocionicTypeUndefinedMsg}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="20"/>
+                <StackLayout IsVisible="{Binding SocionicTypeDefined}">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{local:Translate SocionicName}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                    <Span Text="{Binding Name}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{local:Translate Pseudonym}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                    <Span Text="{Binding Pseudonym}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label/>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{local:Translate JungDichotomies}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                    <Span Text="{Binding JungDichotomies}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{local:Translate RaininSigns}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                    <Span Text="{Binding RaininSigns}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label/>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{local:Translate SmallGroup}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                    <Span Text="{Binding SmallGroup}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{local:Translate WorkingProfile}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                    <Span Text="{Binding WorkingProfile}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label/>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="{local:Translate SocionicDescription}" FontAttributes="Bold" FontSize="Subtitle"/>
+                                    <Span Text="&#10;"/>
+                                    <Span Text="{Binding Description}"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddBtn" xml:space="preserve">
+    <value>додати</value>
+  </data>
+  <data name="BadMood" xml:space="preserve">
+    <value>Поганий</value>
+  </data>
+  <data name="BlacklistTitle" xml:space="preserve">
+    <value>Чорний список</value>
+  </data>
+  <data name="CancelBtn" xml:space="preserve">
+    <value>відмінити</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Змінити пароль</value>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Зміна паролю</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Дата народження</value>
+  </data>
+  <data name="DateRangeLbl" xml:space="preserve">
+    <value>Оберіть діапазон дат</value>
+  </data>
+  <data name="DateTimeLbl" xml:space="preserve">
+    <value>Дата і час</value>
+  </data>
+  <data name="DetailsBtn" xml:space="preserve">
+    <value>Детальніше</value>
+  </data>
+  <data name="DetailsLbl" xml:space="preserve">
+    <value>Подробиці (за бажанням)</value>
+  </data>
+  <data name="DetailsTitle" xml:space="preserve">
+    <value>Подробиці</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Пошта</value>
+  </data>
+  <data name="EmployeeInfoTitle" xml:space="preserve">
+    <value>Дані робітника</value>
+  </data>
+  <data name="EmployeesTitle" xml:space="preserve">
+    <value>Робітники</value>
+  </data>
+  <data name="ExitBtn" xml:space="preserve">
+    <value>вийти</value>
+  </data>
+  <data name="ExitTestMsg" xml:space="preserve">
+    <value>Ви дійсно бажаєте вийти з тесту? Ваші відповіді не будуть збережені.</value>
+  </data>
+  <data name="ExitTestTitle" xml:space="preserve">
+    <value>Вихід з тесту</value>
+  </data>
+  <data name="FeedbackBtn" xml:space="preserve">
+    <value>Мій зворотній зв'язок</value>
+  </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>Зворотній зв'язок</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Повне ім'я</value>
+  </data>
+  <data name="GoodMood" xml:space="preserve">
+    <value>Гарний</value>
+  </data>
+  <data name="GreatMood" xml:space="preserve">
+    <value>Чудовий</value>
+  </data>
+  <data name="HeartBeatLbl" xml:space="preserve">
+    <value>Серцебиття</value>
+  </data>
+  <data name="InvalidInputFillMsg" xml:space="preserve">
+    <value>Заповніть усі поля.</value>
+  </data>
+  <data name="InvalidInputNewPassMsg" xml:space="preserve">
+    <value>Перевірте новий пароль, ви ввели різні значення.</value>
+  </data>
+  <data name="InvalidInputOldPassMsg" xml:space="preserve">
+    <value>Перевірте старий пароль, він некоректний.</value>
+  </data>
+  <data name="InvalidInputSamePassMsg" xml:space="preserve">
+    <value>Новий пароль співпадає зі старим.</value>
+  </data>
+  <data name="InvalidInputTitle" xml:space="preserve">
+    <value>Некоректні вхідні дані</value>
+  </data>
+  <data name="IotDataBtn" xml:space="preserve">
+    <value>Мої IoT дані</value>
+  </data>
+  <data name="IotDataTitle" xml:space="preserve">
+    <value>IoT дані</value>
+  </data>
+  <data name="IotIdMsg" xml:space="preserve">
+    <value>Ваш ID для ІоТ-девайсу - </value>
+  </data>
+  <data name="JungDichotomies" xml:space="preserve">
+    <value>Дихотомії Юнга: </value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Логін</value>
+  </data>
+  <data name="LoginBtn" xml:space="preserve">
+    <value>увійти</value>
+  </data>
+  <data name="LoginFailMsg" xml:space="preserve">
+    <value>Користувача з даними логіном та паролем не знайдено.</value>
+  </data>
+  <data name="LoginFailTitle" xml:space="preserve">
+    <value>Некоректні вхідні дані</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Вийти</value>
+  </data>
+  <data name="MoodLbl" xml:space="preserve">
+    <value>Настрій</value>
+  </data>
+  <data name="NewEmployeeTitle" xml:space="preserve">
+    <value>Новий робітник</value>
+  </data>
+  <data name="NewFeedbackTitle" xml:space="preserve">
+    <value>Додати зворотній зв'язок</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Новий пароль</value>
+  </data>
+  <data name="NoBtn" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Старий пароль</value>
+  </data>
+  <data name="PassTestingBtn" xml:space="preserve">
+    <value>тестування</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="ProfileTitle" xml:space="preserve">
+    <value>Профіль</value>
+  </data>
+  <data name="Pseudonym" xml:space="preserve">
+    <value>Псевдонім: </value>
+  </data>
+  <data name="PulseLbl" xml:space="preserve">
+    <value>Пульс</value>
+  </data>
+  <data name="RaininSigns" xml:space="preserve">
+    <value>Ознаки Рейніна: </value>
+  </data>
+  <data name="SaveBtn" xml:space="preserve">
+    <value>зберегти</value>
+  </data>
+  <data name="SaveFailMsg" xml:space="preserve">
+    <value>Користувач з таким логіном вже існує. Змініть свій логін, щоб він був унікальним.</value>
+  </data>
+  <data name="SaveFailTitle" xml:space="preserve">
+    <value>Невдача</value>
+  </data>
+  <data name="SaveSuccessMsg" xml:space="preserve">
+    <value>Дані було збережено</value>
+  </data>
+  <data name="SaveSuccessTitle" xml:space="preserve">
+    <value>Успіх</value>
+  </data>
+  <data name="SendFeedbackFailMsg" xml:space="preserve">
+    <value>Щось пішло не так, спробуйте пізніше.</value>
+  </data>
+  <data name="SmallGroup" xml:space="preserve">
+    <value>Мала група: </value>
+  </data>
+  <data name="SocionicDescription" xml:space="preserve">
+    <value>Детальний опис:</value>
+  </data>
+  <data name="SocionicName" xml:space="preserve">
+    <value>Назва: </value>
+  </data>
+  <data name="SocionicType" xml:space="preserve">
+    <value>Соціонічний тип</value>
+  </data>
+  <data name="SocionicTypeTitle" xml:space="preserve">
+    <value>Соціонічний тип</value>
+  </data>
+  <data name="SocionicTypeUndefinedMsg" xml:space="preserve">
+    <value>Ваш соціонічний тип не визначено. Пройдіть тестування, щоб дізнатись багато нового про себе.</value>
+  </data>
+  <data name="SoSoMood" xml:space="preserve">
+    <value>Такий собі</value>
+  </data>
+  <data name="TasksLbl" xml:space="preserve">
+    <value>Оберіть завдання, в якому ви зацікавлені</value>
+  </data>
+  <data name="TasksTitle" xml:space="preserve">
+    <value>Завдання</value>
+  </data>
+  <data name="TeamTitle" xml:space="preserve">
+    <value>Моя команда</value>
+  </data>
+  <data name="TemperatureLbl" xml:space="preserve">
+    <value>Температура</value>
+  </data>
+  <data name="TestingTitle" xml:space="preserve">
+    <value>Тестування</value>
+  </data>
+  <data name="TestPassingTitle" xml:space="preserve">
+    <value>Проходження тестування</value>
+  </data>
+  <data name="TestResMsg" xml:space="preserve">
+    <value>Ваш соціонічний тип - </value>
+  </data>
+  <data name="TestResTitle" xml:space="preserve">
+    <value>Результат тестування</value>
+  </data>
+  <data name="WayOfBuildingLbl" xml:space="preserve">
+    <value>Спосіб побудови</value>
+  </data>
+  <data name="WelcomeBtn" xml:space="preserve">
+    <value>веб-сайт</value>
+  </data>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>Ласкаво просимо</value>
+  </data>
+  <data name="WelcomeTxt" xml:space="preserve">
+    <value>Ви також можете відвідати наш веб-сайт: </value>
+  </data>
+  <data name="WorkingProfile" xml:space="preserve">
+    <value>Робочий профіль: </value>
+  </data>
+  <data name="YesBtn" xml:space="preserve">
+    <value>Так</value>
+  </data>
+</root>

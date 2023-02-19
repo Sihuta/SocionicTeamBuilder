@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:vm="clr-namespace:SocionicTeamBuilder.Mobile.Views"
+       Title="SocionicTeamBuilder.Mobile"
+       x:Class="SocionicTeamBuilder.Mobile.AppShell"
+       xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+       xmlns:root="clr-namespace:SocionicTeamBuilder.Mobile">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <FlyoutItem Title="{local:Translate WelcomeTitle}" Icon="icon_about.png">
+        <ShellContent ContentTemplate="{DataTemplate vm:WelcomePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="{local:Translate ProfileTitle}" Icon="icon_feed.png">
+        <ShellContent ContentTemplate="{DataTemplate vm:ProfilePage}"/>
+    </FlyoutItem>
+
+    <!--for employee-->
+    <FlyoutItem IsVisible="{x:Static root:App.IsEmployee}" Title="{local:Translate SocionicTypeTitle}" Icon="socionic_type.png">
+        <ShellContent ContentTemplate="{DataTemplate vm:SocionicTypePage}" />
+    </FlyoutItem>
+    <FlyoutItem IsVisible="{x:Static root:App.IsEmployee}" Title="{local:Translate TasksTitle}" Icon="tasks.png">
+        <ShellContent ContentTemplate="{DataTemplate vm:TasksPage}" />
+    </FlyoutItem>
+    <FlyoutItem IsVisible="{x:Static root:App.IsEmployee}" Title="{local:Translate BlacklistTitle}" Icon="blacklist.png">
+        <ShellContent ContentTemplate="{DataTemplate vm:BlacklistPage}" />
+    </FlyoutItem>
+    
+    <!--for team creator-->
+    <FlyoutItem IsVisible="{x:Static root:App.IsTeamCreator}" Title="{local:Translate EmployeesTitle}" Icon="employees.png">
+        <ShellContent ContentTemplate="{DataTemplate vm:EmployeesPage}"/>
+    </FlyoutItem>
+
+    <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
+    <MenuItem Text="{local:Translate Logout}" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    </MenuItem>
+
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate vm:LoginPage}" />
+    </TabBar>
+</Shell>

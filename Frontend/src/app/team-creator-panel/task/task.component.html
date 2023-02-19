@@ -1,0 +1,38 @@
+<div class="container mt-3">
+    <h4>{{ 'TEAM-CREATOR_PANEL.TASK.TITLE' | translate }}</h4><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TASK.TITLE_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TASK.TIME_LIMITED_COL' | translate }}</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of tasks">
+                <td>{{t.title}}</td>
+                <td *ngIf="t.timeIsLimited">
+                    {{ 'TEAM-CREATOR_PANEL.CHOICE.YES' | translate }}
+                </td>
+                <td *ngIf="!t.timeIsLimited">
+                    {{ 'TEAM-CREATOR_PANEL.CHOICE.NO' | translate }}
+                </td>
+                
+                <td><button (click)="showTeamMembers($event)" name="{{t.id}}" type="button" class="btn btn-info">
+                    {{ 'TEAM-CREATOR_PANEL.TASK.EMPLOYEES_BTN' | translate }}
+                </button></td>
+                <td><button (click)="displayTeams($event)" name="{{t.id}}" type="button" class="btn btn-success">
+                    {{ 'TEAM-CREATOR_PANEL.TASK.TEAMS_BTN' | translate }}
+                </button></td>
+
+                <td><button (click)="delete($event)" name="{{t.id}}" type="button" class="btn btn-danger">
+                    {{ 'BTN.DELETE' | translate }}
+                </button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="add()" type="button" class="btn btn-primary">{{ 'BTN.ADD' | translate }}</button>
+</div>

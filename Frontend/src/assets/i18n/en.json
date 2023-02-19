@@ -1,0 +1,170 @@
+{
+    "LANG": {
+        "EN": "English",
+        "UA": "Ukrainian"
+    },
+
+    "LOGIN": {
+        "LOGIN_LBL": "Login",
+        "PASSWORD_LBL": "Password",
+        "LOGIN_BTN": "Log In",
+        "USER_NOT_FOUND_MSG": "There is no user with such login and password"
+    },
+
+    "FORM_INVALID_MSG": "Please, fill in all of the fields above.",
+
+    "BTN": {
+        "EDIT": "Edit",
+        "DELETE": "Delete",
+        "ADD": "Add",
+        "SUBMIT": "Submit",
+        "SAVE": "Save",
+        "APPROVE": "Approve",
+        "REBUILD": "Rebuild"
+    },
+    
+    "ADMIN_PANEL": {
+        "NAVBAR": {
+            "ENTERPRISE": "Enterprises",
+            "USER": "Users",
+            "DB": "DB",
+            "LOGOUT": "Log out"
+        },
+
+        "MAIN": "Welcome to the admin panel!",
+
+        "ENTERPRISE": {
+            "TABLE_NAME": "List of enterprises",
+            "NAME_COL": "Name",
+            "LOCATION_COL": "Location",
+            "ACTIVITY_COL": "Activity",
+            "ADD_LBL": "Add new enterprise",
+            "EDIT_LBL": "Edit the enterprise"
+        },
+
+        "USER": {
+            "TABLE_NAME": "List of users",
+            "LOGIN_COL": "Login",
+            "EMAIL_COL": "Email",
+            "ROLE_COL": "Role",
+            "ADD_LBL": "Register new user",
+            "EDIT_LBL": "Edit the user",
+            "CHANGE_PASSWORD": "Change password",
+            "OLD_PASSWORD": "Old password",
+            "NEW_PASSWORD1": "Type new password",
+            "NEW_PASSWORD2": "Type new password one more time",
+            "CHOOSE_OPTION": "Choose ...",
+            "NEW_PASSES_ERR": "Please, check out your new password. You have entered different values.",
+            "OLD_PASS_AS_NEW_ERR": "Your new password is the same as old one.",
+            "LOGIN_ERR": "User with such login is already exists."
+        },
+
+        "DB": {
+            "TITLE": "Managin Data Base",
+            "BACKUP_BTN": "Backup db",
+            "RESTORE_LBL": "Choose *.bak file to restore db",
+            "RESTORE_BTN": "Restore db",
+            "FORM_INVALID_MSG": "Please, choose *.bak file to restore db",
+            "ERR_MSG": "Something went wrong",
+            "BACKUP_MSG": "DB was backuped to file: {{file}}",
+            "RESTORE_MSG": "DB was restored from file: {{file}}"
+        }
+    },
+
+    "TEAM-CREATOR_PANEL": {
+        "NAVBAR": {
+            "EMPLOYEE": "Employees",
+            "TASK": "Tasks",
+            "TEAM": "Teams",
+            "DB": "DB",
+            "LOGOUT": "Log out"
+        },
+
+        "EMPLOYEE": {
+            "TITLE": "Register an employee",
+            "FULL_NAME_COL": "Full Name",
+            "ENTERPRISE_COL": "Enterprise",
+            "TABLE_NAME": "List of employees in",
+            "SOCIONIC_TYPE_COL": "Socionic type",
+            "WORKING_PROFILE_COL": "Working profile"
+        },
+
+        "CHOICE": {
+            "YES": "Yes",
+            "NO": "No"
+        },
+
+        "TASK": {
+            "TITLE": "List of tasks",
+            "TITLE_COL": "Title",
+            "TIME_LIMITED_COL": "Time is limited",
+            "EMPLOYEES_BTN": "Employees",
+            "TEAMS_BTN": "Teams",
+
+            "NEW": {
+                "TITLE": "Add new task",
+                "TITLE_LBL": "Title",
+                "EMP_CNT_LBL": "Employee count",
+                "TEAM_CNT_LBL": "Team count",
+                "MIN_TEAM_SIZE_LBL": "Min team size",
+                "LIMITED_TIME_LBL": "Time is limited",
+                "ADD_EMP_LBL": "Add {{employeeCount}} employees for this task",
+                "EMP_LBL": "Employee",
+                "POSITION_LBL": "Position",
+                "TITLE_ERR": "Please, enter the title for this task",
+                "PARAMS_ERR": "Please, check parameters of the task you entered",
+                "SAME_EMP_ERR": "You should add different employees to the task",
+                "NULL_EMP_ERR": "Please, select employees from the dropdown list"
+            }
+        },
+
+        "TEAM_MEMBER": {
+            "TITLE": "List of employees for this task",
+            "NAME_COL": "Full name",
+            "POSITION_COL": "Position",
+            "WORK_PROFILE_COL": "Working profile"
+        },
+
+        "TEAM": {
+            "FEEDBACK": {
+                "DATA_RANGE_LBL": "Enter a data range",
+                "DATETIME_COL": "Date time",
+                "MOOD_COL": "Mood",
+                "DETAILS_COL": "Details"
+            },
+            "IOT_DATA": {
+                "HEART_BEAT_LBL": "Heart beat",
+                "TEMPERATURE_LBL": "Temperature",
+                "PULSE_LBL": "Pulse",
+                "MIN_LBL": "min",
+                "MAX_LBL": "max"
+            },
+            "CREATED": {
+                "TITLE": "Choose the variant of team building",
+                "BLACKLIST_CHECKBOX": "Take into account the personal relationships of employees",
+                "VARIANT_NUM": "Variant #",
+                "TEAM_NUM": "Team #",
+                "BUILDING_WAY_LBL": "Way of building:",
+                "CATEGORY_LBL": "Category:",
+                "EMP_LBL": "Employees:"
+            },
+
+            "APPROVED": {
+                "TITLE": "Created teams for the task",
+                "EMP_COL": "Employees",
+                "BUILDING_WAY_COL": "Way of building",
+                "TESTED_COL": "Tested on practice",
+                "TEAM_NUM": "Team #",
+                "IOT_DATA_BTN": "IoT data",
+                "FEEDBACK_BTN": "Feedback"
+            },
+
+            "CODE": {
+                "DIFF_WAYS": "Recommended to choose another variant with the same way of team building",
+                "BEST_IF_DEADLINE": "Best variant, especially if there is a strict deadline",
+                "BEST_ONE": "Best variant ever but only if time is not limited for the task",
+                "WORST_ONE": "Recommended to choose this variant only if there isn't other options"
+            }
+        }
+    }
+}

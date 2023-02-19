@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddBtn" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="BadMood" xml:space="preserve">
+    <value>Bad</value>
+  </data>
+  <data name="BlacklistTitle" xml:space="preserve">
+    <value>Blacklist</value>
+  </data>
+  <data name="CancelBtn" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Changing password</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Date Of Birth</value>
+  </data>
+  <data name="DateRangeLbl" xml:space="preserve">
+    <value>Select date range</value>
+  </data>
+  <data name="DateTimeLbl" xml:space="preserve">
+    <value>Date time</value>
+  </data>
+  <data name="DetailsBtn" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="DetailsLbl" xml:space="preserve">
+    <value>Details (optional)</value>
+  </data>
+  <data name="DetailsTitle" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmployeeInfoTitle" xml:space="preserve">
+    <value>Employee's data</value>
+  </data>
+  <data name="EmployeesTitle" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="ExitBtn" xml:space="preserve">
+    <value>exit</value>
+  </data>
+  <data name="ExitTestMsg" xml:space="preserve">
+    <value>Do you really wanna to exit from the test? Your answers won't be saved.</value>
+  </data>
+  <data name="ExitTestTitle" xml:space="preserve">
+    <value>Exit from the test</value>
+  </data>
+  <data name="FeedbackBtn" xml:space="preserve">
+    <value>My feedback</value>
+  </data>
+  <data name="FeedbackTitle" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="GoodMood" xml:space="preserve">
+    <value>Good</value>
+  </data>
+  <data name="GreatMood" xml:space="preserve">
+    <value>Great</value>
+  </data>
+  <data name="HeartBeatLbl" xml:space="preserve">
+    <value>Heartbeat</value>
+  </data>
+  <data name="InvalidInputFillMsg" xml:space="preserve">
+    <value>Fill in all of the fields.</value>
+  </data>
+  <data name="InvalidInputNewPassMsg" xml:space="preserve">
+    <value>Check new password, you entered different values.</value>
+  </data>
+  <data name="InvalidInputOldPassMsg" xml:space="preserve">
+    <value>Check old password, it's incorrect.</value>
+  </data>
+  <data name="InvalidInputSamePassMsg" xml:space="preserve">
+    <value>New password is the same as old one.</value>
+  </data>
+  <data name="InvalidInputTitle" xml:space="preserve">
+    <value>Invalid input</value>
+  </data>
+  <data name="IotDataBtn" xml:space="preserve">
+    <value>My IoT data</value>
+  </data>
+  <data name="IotDataTitle" xml:space="preserve">
+    <value>IoT data</value>
+  </data>
+  <data name="IotIdMsg" xml:space="preserve">
+    <value>Your ID for the IoT-device is </value>
+  </data>
+  <data name="JungDichotomies" xml:space="preserve">
+    <value>Jung dichotomies: </value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginBtn" xml:space="preserve">
+    <value>log in</value>
+  </data>
+  <data name="LoginFailMsg" xml:space="preserve">
+    <value>There is no user with such login and password.</value>
+  </data>
+  <data name="LoginFailTitle" xml:space="preserve">
+    <value>Invalid input</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="MoodLbl" xml:space="preserve">
+    <value>Mood</value>
+  </data>
+  <data name="NewEmployeeTitle" xml:space="preserve">
+    <value>New employee</value>
+  </data>
+  <data name="NewFeedbackTitle" xml:space="preserve">
+    <value>Add feedback</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="NoBtn" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+  <data name="PassTestingBtn" xml:space="preserve">
+    <value>pass testing</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ProfileTitle" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Pseudonym" xml:space="preserve">
+    <value>Pseudonym: </value>
+  </data>
+  <data name="PulseLbl" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="RaininSigns" xml:space="preserve">
+    <value>Rainin signs: </value>
+  </data>
+  <data name="SaveBtn" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="SaveFailMsg" xml:space="preserve">
+    <value>User with such login already exists, it should be unique.</value>
+  </data>
+  <data name="SaveFailTitle" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="SaveSuccessMsg" xml:space="preserve">
+    <value>Data was saved</value>
+  </data>
+  <data name="SaveSuccessTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="SendFeedbackFailMsg" xml:space="preserve">
+    <value>Something went wrong. Try later.</value>
+  </data>
+  <data name="SmallGroup" xml:space="preserve">
+    <value>Small group: </value>
+  </data>
+  <data name="SocionicDescription" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="SocionicName" xml:space="preserve">
+    <value>Name: </value>
+  </data>
+  <data name="SocionicType" xml:space="preserve">
+    <value>Socionic Type</value>
+  </data>
+  <data name="SocionicTypeTitle" xml:space="preserve">
+    <value>Socionic Type</value>
+  </data>
+  <data name="SocionicTypeUndefinedMsg" xml:space="preserve">
+    <value>Your socionic type is undefined. Pass testing to know smth new about yourself.</value>
+  </data>
+  <data name="SoSoMood" xml:space="preserve">
+    <value>So-so</value>
+  </data>
+  <data name="TasksLbl" xml:space="preserve">
+    <value>Select the task you are interested in</value>
+  </data>
+  <data name="TasksTitle" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="TeamTitle" xml:space="preserve">
+    <value>My team</value>
+  </data>
+  <data name="TemperatureLbl" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="TestingTitle" xml:space="preserve">
+    <value>Testing</value>
+  </data>
+  <data name="TestPassingTitle" xml:space="preserve">
+    <value>Test passing</value>
+  </data>
+  <data name="TestResMsg" xml:space="preserve">
+    <value>Your socionic type is </value>
+  </data>
+  <data name="TestResTitle" xml:space="preserve">
+    <value>Testing result</value>
+  </data>
+  <data name="WayOfBuildingLbl" xml:space="preserve">
+    <value>Way of building</value>
+  </data>
+  <data name="WelcomeBtn" xml:space="preserve">
+    <value>web site</value>
+  </data>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeTxt" xml:space="preserve">
+    <value>You can visit our web-site: </value>
+  </data>
+  <data name="WorkingProfile" xml:space="preserve">
+    <value>Working profile: </value>
+  </data>
+  <data name="YesBtn" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+</root>

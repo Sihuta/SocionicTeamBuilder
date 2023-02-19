@@ -1,0 +1,26 @@
+<div class="container mt-3 py-3">
+    <h4>{{ 'ADMIN_PANEL.DB.TITLE' | translate }}</h4><br>
+    <div class="mb-3">
+        <button type="submit" (click)="backup()" class="btn btn-primary">{{ 'ADMIN_PANEL.DB.BACKUP_BTN' | translate }}</button>
+    </div>
+    <br>
+    <form #myForm="ngForm" (ngSubmit)="restore()">
+        <div class="mb-3">
+            <label for="roleInput" class="form-label">{{ 'ADMIN_PANEL.DB.RESTORE_LBL' | translate }}</label>
+            <select [(ngModel)]="fileName" name="fileName" class="form-select" id="roleInput">
+                <option selected disabled value="">{{ 'ADMIN_PANEL.USER.CHOOSE_OPTION' | translate }}</option>
+                <option *ngFor="let f of files" [value]="f">{{f}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ 'ADMIN_PANEL.DB.RESTORE_BTN' | translate }}</button>
+    </form>
+</div>
+<div *ngIf="!formIsValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'ADMIN_PANEL.DB.FORM_INVALID_MSG' | translate }}
+</div>
+<div *ngIf="success && successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+    {{successMessage}}
+</div>
+<div *ngIf="!success && errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{errorMessage}}
+</div>

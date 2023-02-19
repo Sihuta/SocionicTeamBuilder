@@ -1,0 +1,36 @@
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">SocionicTeamBuilder</a>
+        <div class="d-flex justify-content-end">
+          <select [(ngModel)]="selectedLang" name="selectedLang" (change)="onChange($event)" class="form-select form-select-sm">
+            <option value="en">{{ 'LANG.EN' | translate }}</option>
+            <option value="ua">{{ 'LANG.UA' | translate }}</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="d-flex justify-content-center py-3">
+      <form #myForm="ngForm" (ngSubmit)="logIn()">
+        <div class="mb-3">
+          <label for="loginInput" class="form-label">{{ 'LOGIN.LOGIN_LBL' | translate }}</label>
+          <input type="email" class="form-control" [(ngModel)]="login" name="login" id="loginInput" required>
+        </div>
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">{{ 'LOGIN.PASSWORD_LBL' | translate }}</label>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" id="passwordInput" required>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ 'LOGIN.LOGIN_BTN' | translate }}</button>
+      </form>
+    </div>
+    <div *ngIf="!formIsValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+      {{ 'FORM_INVALID_MSG' | translate }}
+    </div>
+    <div *ngIf="userNotFound" class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ 'LOGIN.USER_NOT_FOUND_MSG' | translate }}
+    </div>
+  </main>
+</body>

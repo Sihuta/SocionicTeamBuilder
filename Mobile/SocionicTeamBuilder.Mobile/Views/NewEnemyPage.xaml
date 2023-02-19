@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:SocionicTeamBuilder.Mobile.Models"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             x:Class="SocionicTeamBuilder.Mobile.Views.NewEnemyPage">
+
+    <StackLayout>
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Employees}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10" x:DataType="model:Employee">
+                        <CheckBox AutomationId="{Binding Id}" CheckedChanged="CheckBox_CheckedChanged"/>
+
+                        <Frame Padding="10" OutlineColor="Black" HorizontalOptions="FillAndExpand">
+                            <StackLayout>
+                                <Label Text="{Binding FullName}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" />
+
+                                <Label Text="{Binding SocionicType}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout Orientation="Horizontal" Spacing="20" Margin="20">
+            <Button Text="{local:Translate CancelBtn}" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="{local:Translate SaveBtn}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

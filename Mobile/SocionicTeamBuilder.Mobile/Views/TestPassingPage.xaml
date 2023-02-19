@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocionicTeamBuilder.Mobile.Views.TestPassingPage"
+             xmlns:vm="clr-namespace:SocionicTeamBuilder.Mobile.ViewModels"  
+             xmlns:model="clr-namespace:SocionicTeamBuilder.Mobile.Models"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             Title="{local:Translate TestPassingTitle}">
+
+    <StackLayout Margin="20">
+        <Label HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="{Binding QuestionTitle}" FontSize="20"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label Text="{Binding QuestionText}" FontAttributes="Bold" HorizontalOptions="Center" FontSize="18"/>
+        <CollectionView Margin="15" x:Name="ItemsListView"
+            ItemsSource="{Binding Answers}"
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="10" x:DataType="model:Answer">
+                        <Frame Padding="15" OutlineColor="Black">
+                            <Label Text="{Binding Text}"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18"
+                                HorizontalOptions="Start"
+                                FontAttributes="Italic"
+                            />
+                        </Frame>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                            NumberOfTapsRequired="1"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TestPassingViewModel}}, Path=AnswerTapped}"		
+                            CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button HorizontalOptions="Center" Text="{local:Translate ExitBtn}" Command="{Binding ExitCommand}"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocionicTeamBuilder.Mobile.Views.BlacklistPage"
+             xmlns:vm="clr-namespace:SocionicTeamBuilder.Mobile.ViewModels"  
+             xmlns:model="clr-namespace:SocionicTeamBuilder.Mobile.Models"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             Title="{local:Translate BlacklistTitle}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{local:Translate AddBtn}" Command="{Binding AddEnemiesCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <RefreshView x:DataType="vm:BlacklistViewModel" Command="{Binding LoadBlacklistCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Employees}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Employee">
+                            <Frame Padding="10" OutlineColor="Black">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Label Text="{Binding FullName}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" />
+
+                                        <Label Text="{Binding SocionicType}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                    </StackLayout>
+                                    
+                                    <ImageButton
+                                        Source="remove_btn.png"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:BlacklistViewModel}}, Path=EnemyRemoved}"
+                                        CommandParameter="{Binding Id}"
+                                        WidthRequest="30"
+                                        HorizontalOptions="EndAndExpand"
+                                        BackgroundColor="White"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </StackLayout>
+</ContentPage>

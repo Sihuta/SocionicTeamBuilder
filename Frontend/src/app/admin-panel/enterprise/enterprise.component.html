@@ -1,0 +1,28 @@
+<div class="container mt-3">
+    <h4>{{ 'ADMIN_PANEL.ENTERPRISE.TABLE_NAME' | translate }}</h4><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'ADMIN_PANEL.ENTERPRISE.NAME_COL' | translate }}</th>
+            <th scope="col">{{ 'ADMIN_PANEL.ENTERPRISE.LOCATION_COL' | translate }}</th>
+            <th scope="col">{{ 'ADMIN_PANEL.ENTERPRISE.ACTIVITY_COL' | translate }}</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of enterprises">
+                <td>{{e.name}}</td>
+                <td>{{e.location}}</td>
+                <td>{{e.activity}}</td>
+                <td><button (click)="edit($event)" name="{{e.id}}" type="button" class="btn btn-warning">
+                    {{ 'BTN.EDIT' | translate }}
+                </button></td>
+                <td><button (click)="delete($event)" name="{{e.id}}" type="button" class="btn btn-danger">
+                    {{ 'BTN.DELETE' | translate }}
+                </button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="add()" type="button" class="btn btn-primary">{{ 'BTN.ADD' | translate }}</button>
+</div>

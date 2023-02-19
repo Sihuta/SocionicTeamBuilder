@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocionicTeamBuilder.Mobile.Views.FeedbackDetailPage"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             Title="{local:Translate FeedbackTitle}">
+
+    <StackLayout Spacing="10" Padding="15">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{local:Translate MoodLbl}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black"
+                   WidthRequest="200" HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding Mood}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{local:Translate DateTimeLbl}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black"
+                   WidthRequest="200" HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding DateTime}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Spacing="10">
+            <Label Text="{local:Translate DetailsTitle}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black">
+                <Label Text="{Binding Details}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

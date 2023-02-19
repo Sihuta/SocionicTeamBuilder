@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocionicTeamBuilder.Mobile.Android", "SocionicTeamBuilder.Mobile.Android\SocionicTeamBuilder.Mobile.Android.csproj", "{2F717315-F136-4533-9E8C-B4410C49569C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocionicTeamBuilder.Mobile", "SocionicTeamBuilder.Mobile\SocionicTeamBuilder.Mobile.csproj", "{D38241EE-11D1-4F26-83CB-3EB67E4B9578}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F717315-F136-4533-9E8C-B4410C49569C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F717315-F136-4533-9E8C-B4410C49569C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F717315-F136-4533-9E8C-B4410C49569C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2F717315-F136-4533-9E8C-B4410C49569C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F717315-F136-4533-9E8C-B4410C49569C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F717315-F136-4533-9E8C-B4410C49569C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D38241EE-11D1-4F26-83CB-3EB67E4B9578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38241EE-11D1-4F26-83CB-3EB67E4B9578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38241EE-11D1-4F26-83CB-3EB67E4B9578}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D38241EE-11D1-4F26-83CB-3EB67E4B9578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D38241EE-11D1-4F26-83CB-3EB67E4B9578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D38241EE-11D1-4F26-83CB-3EB67E4B9578}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE631A6D-DA57-4D3F-9C88-8BF096EE67E8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+<div class="container mt-3">
+    <h4>{{ 'ADMIN_PANEL.USER.TABLE_NAME' | translate }}</h4><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'ADMIN_PANEL.USER.LOGIN_COL' | translate }}</th>
+            <th scope="col">{{ 'ADMIN_PANEL.USER.EMAIL_COL' | translate }}</th>
+            <th scope="col">{{ 'ADMIN_PANEL.USER.ROLE_COL' | translate }}</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.login}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.role}}</td>
+
+                <td><button (click)="edit($event)" name="{{u.id}}" type="button" class="btn btn-warning">
+                    {{ 'BTN.EDIT' | translate }}
+                </button></td>
+                <td><button (click)="delete($event)" name="{{u.id}}" type="button" class="btn btn-danger">
+                    {{ 'BTN.DELETE' | translate }}
+                </button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="add()" type="button" class="btn btn-primary">{{ 'BTN.ADD' | translate }}</button>
+</div>

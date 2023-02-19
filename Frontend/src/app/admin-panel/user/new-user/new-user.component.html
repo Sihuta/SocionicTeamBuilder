@@ -1,0 +1,71 @@
+<div class="container mt-3">
+    <h4>{{label}}</h4>
+    <div class="d-flex justify-content-center py-3">
+        <form class="container" #myForm="ngForm" (ngSubmit)="submit()">
+            <div class="mb-3">
+                <label for="loginInput" class="form-label">{{ 'ADMIN_PANEL.USER.LOGIN_COL' | translate }}</label>
+                <input [readonly]="staticEditMode" type="text" class="form-control" [(ngModel)]="user.login" name="login" id="loginInput">
+            </div>
+            <div *ngIf="!staticEditMode && !staticEditModeOwnAcc" class="mb-3">
+                <label for="passwordInput" class="form-label">{{ 'LOGIN.PASSWORD_LBL' | translate }}</label>
+                <input type="password" class="form-control" [(ngModel)]="user.password" name="password" id="passwordInput">
+            </div>
+            <div class="mb-3">
+                <label for="emailInput" class="form-label">{{ 'ADMIN_PANEL.USER.EMAIL_COL' | translate }}</label>
+                <input [readonly]="staticEditMode" type="text" class="form-control" [(ngModel)]="user.email" name="email" id="emailInput">
+            </div>
+            <div class="container mt-5">
+                <div *ngIf="staticEditModeOwnAcc" class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="changePass" name="changePass" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        {{ 'ADMIN_PANEL.USER.CHANGE_PASSWORD' | translate }}
+                    </label>
+                </div><br>
+                <div *ngIf="staticEditModeOwnAcc" class="mb-3">
+                    <label for="oldPasswordInput" class="form-label">{{ 'ADMIN_PANEL.USER.OLD_PASSWORD' | translate }}</label>
+                    <input type="password" class="form-control" [(ngModel)]="oldPass" name="oldPass" id="oldPasswordInput">
+                </div>
+                <div *ngIf="staticEditModeOwnAcc" class="mb-3">
+                    <label for="newPassword1Input" class="form-label">{{ 'ADMIN_PANEL.USER.NEW_PASSWORD1' | translate }}</label>
+                    <input type="password" class="form-control" [(ngModel)]="newPass1" name="newPass1" id="newPassword1Input">
+                </div>
+                <div *ngIf="staticEditModeOwnAcc" class="mb-3">
+                    <label for="newPassword2Input" class="form-label">{{ 'ADMIN_PANEL.USER.NEW_PASSWORD2' | translate }}</label>
+                    <input type="password" class="form-control" [(ngModel)]="newPass2" name="newPass2" id="newPassword2Input">
+                </div>
+            </div>
+            <div *ngIf="!staticEditModeOwnAcc" class="mb-3">
+                <label for="roleInput" class="form-label">{{ 'ADMIN_PANEL.USER.ROLE_COL' | translate }}</label>
+                <select (ngModelChange)="changeRole($event)" class="form-select" [(ngModel)]="user.role" name="role" id="roleInput">
+                    <option selected disabled value="">{{ 'ADMIN_PANEL.USER.CHOOSE_OPTION' | translate }}</option>
+                    <option>employee</option>
+                    <option>teamCreator</option>
+                    <option>admin</option>
+                </select>
+            </div>
+
+            <div *ngIf="!staticEditMode && !staticEditModeOwnAcc && !admin" class="mb-3">
+                <label for="enterpriseInput" class="form-label">Enterprise</label>
+                <select [(ngModel)]="user.enterpriseId" name="enterpriseId" class="form-select" id="enterpriseInput">
+                    <option selected disabled>{{ 'ADMIN_PANEL.USER.CHOOSE_OPTION' | translate }}</option>
+                    <option *ngFor="let e of enterprises" [value]="e.id">
+                        {{e.name}} | {{e.location}} | {{e.activity}}</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">{{ 'BTN.SUBMIT' | translate }}</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="!formIsValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'FORM_INVALID_MSG' | translate }}
+</div>
+<div *ngIf="newPassesDiferent" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'ADMIN_PANEL.USER.NEW_PASSES_ERR' | translate }}
+</div>
+<div *ngIf="oldPassSameAsNew" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'ADMIN_PANEL.USER.OLD_PASS_AS_NEW_ERR' | translate }}
+</div>
+<div *ngIf="!loginIsUnique" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ 'ADMIN_PANEL.USER.LOGIN_ERR' | translate }}
+</div>

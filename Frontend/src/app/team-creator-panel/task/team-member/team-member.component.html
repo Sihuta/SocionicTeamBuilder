@@ -1,0 +1,22 @@
+<div class="container mt-3">
+    <h4>{{ 'TEAM-CREATOR_PANEL.TEAM_MEMBER.TITLE' | translate }}</h4><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM_MEMBER.NAME_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM_MEMBER.POSITION_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM_MEMBER.WORK_PROFILE_COL' | translate }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tm of teamMembers">
+                <td>{{getFullName(tm.employeeId)}}</td>
+                <td>
+                    <input type="text" class="form-control" [(ngModel)]="tm.position" name="position" id="positionInput">
+                </td>
+                <td>{{getWorkingProfile(tm.employeeId)}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="save()" type="button" class="btn btn-primary">{{ 'BTN.SAVE' | translate }}</button>
+</div>

@@ -1,0 +1,103 @@
+<div *ngIf="!teamsCreated" class="container mt-3">
+    <h4>{{ 'TEAM-CREATOR_PANEL.TEAM.CREATED.TITLE' | translate }}</h4>
+    <div class="form-check">
+        <input class="form-check-input" (change)="blacklistCheckboxChanged($event)" type="checkbox" [(ngModel)]="useBlacklist" name="useBlacklist" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            {{ 'TEAM-CREATOR_PANEL.TEAM.CREATED.BLACKLIST_CHECKBOX' | translate }}
+        </label>
+    </div><br>
+    <div *ngFor="let groupOfTeams of createdGroupOfTeams"><br>
+        <div class="mb-3">
+            <img *ngIf="isBestVariant(groupOfTeams)" src="./assets/icons/best-icon.svg" height="50" width="50" alt="Best one">
+            <h5>{{ 'TEAM-CREATOR_PANEL.TEAM.CREATED.VARIANT_NUM' | translate }}
+                {{getVariantNumber(groupOfTeams)}} - {{getVariantDescription(groupOfTeams)}}</h5>
+        </div>
+        <div class="container mb-3" *ngFor="let team of groupOfTeams.createdTeams">
+            <div class="container mb-4 mt-4">
+                <h6>{{ 'TEAM-CREATOR_PANEL.TEAM.CREATED.TEAM_NUM' | translate }}{{getTeamIndex(groupOfTeams, team)}}</h6>
+                <div class="container row g-2 align-items-center mb-1">
+                    <div class="col-auto">
+                        <label for="wayOfBuildingInput" class="form-label">
+                            {{ 'TEAM-CREATOR_PANEL.TEAM.CREATED.BUILDING_WAY_LBL' | translate }}
+                        </label>
+                    </div>
+                    <div class="col-auto">
+                        <input readonly type="text" class="form-control" [(ngModel)]="team.wayOfBuilding" name="wayOfBuilding" id="wayOfBuildingInput">
+                    </div>
+                </div>
+                <div class="container row g-2 align-items-center mb-1">
+                    <div class="col-auto">
+                        <label for="categoryInput" class="form-label">
+                            {{ 'TEAM-CREATOR_PANEL.TEAM.CREATED.CATEGORY_LBL' | translate }}
+                        </label>
+                    </div>
+                    <div class="col-auto">
+                        <input readonly type="text" class="form-control" [(ngModel)]="team.category" name="category" id="categoryInput">
+                    </div>
+                </div>
+                <div class="container">
+                    <h6>{{ 'TEAM-CREATOR_PANEL.TEAM.CREATED.EMP_LBL' | translate }}</h6>
+                    <div class="container col mb-1" *ngFor="let id of team.employeeIdList">
+                        <input readonly type="text" class="form-control" value="{{getEmployeeInfo(id)}}" name="id" id="idInput">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button (click)="approve($event)" name="{{getVariantNumber(groupOfTeams) - 1}}" type="submit" class="btn btn-primary">
+                {{ 'BTN.APPROVE' | translate }}
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="teamsCreated" class="container mt-3">
+    <h4>{{ 'TEAM-CREATOR_PANEL.TEAM.APPROVED.TITLE' | translate }}</h4>
+    <table class="table table-striped mt-3">
+        <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM.APPROVED.EMP_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM.APPROVED.BUILDING_WAY_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM.APPROVED.TESTED_COL' | translate }}</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of teams">
+                <td>{{ 'TEAM-CREATOR_PANEL.TEAM.APPROVED.TEAM_NUM' | translate }}{{getTeamNumber(t)}}</td>
+                <td>
+                    <ol *ngFor="let id of t.employeeIdList" class="list-group list-group">
+                        <li class="list-group-item">{{getTeamMemberInfo(id)}}</li>
+                    </ol>
+                </td>
+                <td>{{t.wayOfBuilding}}</td>
+                <td *ngIf="t.isTestedOnPractice">
+                    {{ 'TEAM-CREATOR_PANEL.CHOICE.YES' | translate }}
+                </td>
+                <td *ngIf="!t.isTestedOnPractice">
+                    {{ 'TEAM-CREATOR_PANEL.CHOICE.NO' | translate }}
+                </td>
+                <td>
+                    <ol *ngFor="let id of t.employeeIdList" class="list-group list-group">
+                        <li class="list-group-item">
+                            <a href="team-creator-panel/task/team/{{t.teamId}}/iot/{{id}}" class="link-dark">
+                                {{ 'TEAM-CREATOR_PANEL.TEAM.APPROVED.IOT_DATA_BTN' | translate }}
+                            </a>
+                        </li>
+                    </ol>
+                </td>
+                <td>
+                    <ol *ngFor="let id of t.employeeIdList" class="list-group list-group">
+                        <li class="list-group-item">
+                            <a href="team-creator-panel/task/team/{{t.teamId}}/feedback/{{id}}" class="link-dark">
+                                {{ 'TEAM-CREATOR_PANEL.TEAM.APPROVED.FEEDBACK_BTN' | translate }}
+                            </a>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="rebuild()" type="button" class="btn btn-primary">{{ 'BTN.REBUILD' | translate }}</button>
+</div>

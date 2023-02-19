@@ -1,0 +1,38 @@
+<div class="container mt-3">
+    <h4>{{ 'TEAM-CREATOR_PANEL.EMPLOYEE.TITLE' | translate }}</h4>
+    <div class="d-flex justify-content-center py-3">
+        <form class="container" #myForm="ngForm" (ngSubmit)="submit()">
+            <div class="mb-3">
+                <label for="loginInput" class="form-label">{{ 'LOGIN.LOGIN_LBL' | translate }}</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.login" name="login" id="loginInput">
+            </div>
+            <div class="mb-3">
+                <label for="passwordInput" class="form-label">{{ 'LOGIN.PASSWORD_LBL' | translate }}</label>
+                <input type="password" class="form-control" [(ngModel)]="employee.password" name="password" id="passwordInput">
+            </div>
+            <div class="mb-3">
+                <label for="emailInput" class="form-label">{{ 'ADMIN_PANEL.USER.EMAIL_COL' | translate }}</label>
+                <input type="email" class="form-control" [(ngModel)]="employee.email" name="email" id="emailInput">
+            </div>
+            <div class="mb-3">
+                <label for="roleInput" class="form-label">{{ 'ADMIN_PANEL.USER.ROLE_COL' | translate }}</label>
+                <input readonly type="text" class="form-control" [(ngModel)]="employee.role" name="role" id="roleInput">
+            </div>
+            <div class="mb-3">
+                <label for="fullNameInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.EMPLOYEE.FULL_NAME_COL' | translate }}</label>
+                <input type="text" class="form-control" [(ngModel)]="employee.fullName" name="fullName" id="fullNameInput">
+            </div>
+            <div class="mb-3">
+                <label for="enterpriseInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.EMPLOYEE.ENTERPRISE_COL' | translate }}</label>
+                <input readonly type="text" class="form-control" [(ngModel)]="employee.enterprise" name="enterprise" id="enterpriseInput">
+            </div>
+            <button type="submit" class="btn btn-primary">{{ 'BTN.SUBMIT' | translate }}</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="!formIsValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'FORM_INVALID_MSG' | translate }}
+</div>
+<div *ngIf="!loginIsUnique" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'ADMIN_PANEL.USER.LOGIN_ERR' | translate }}
+</div>

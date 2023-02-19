@@ -1,0 +1,63 @@
+<div class="container mt-3">
+    <h4>{{ 'TEAM-CREATOR_PANEL.TASK.NEW.TITLE' | translate }}</h4>
+    <div class="d-flex justify-content-center py-3">
+        <form class="container" #myForm="ngForm" (ngSubmit)="submit()">
+            <div class="mb-3">
+                <label for="titleInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.TASK.NEW.TITLE_LBL' | translate }}</label>
+                <input type="text" class="form-control" [(ngModel)]="task.title" name="title" id="titleInput">
+            </div>
+            <div class="row g-1 mb-3">
+                <div class="col">
+                    <label for="employeeCountInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.TASK.NEW.EMP_CNT_LBL' | translate }}</label>
+                    <input type="number"(ngModelChange)="saveEmpCnt($event)" min="1" max="10" class="form-control" [(ngModel)]="task.employeeCount" name="employeeCount" id="employeeCountInput">
+                </div>
+                <div class="col">
+                    <label for="teamCountInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.TASK.NEW.TEAM_CNT_LBL' | translate }}</label>
+                    <input type="number" min="1" max="10" class="form-control" [(ngModel)]="task.teamCount" name="teamCount" id="teamCountInput">
+                </div>
+                <div class="col">
+                    <label for="minTeamSizeInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.TASK.NEW.MIN_TEAM_SIZE_LBL' | translate }}</label>
+                    <input type="number" min="1" max="10" class="form-control" [(ngModel)]="task.minTeamSize" name="minTeamSize" id="minTeamSizeInput">
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="task.timeIsLimited" name="timeIsLimited" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    {{ 'TEAM-CREATOR_PANEL.TASK.NEW.LIMITED_TIME_LBL' | translate }}
+                </label>
+            </div>
+
+            <div class="container mt-5">
+                <h5>{{ 'TEAM-CREATOR_PANEL.TASK.NEW.ADD_EMP_LBL' | translate: {employeeCount: task.employeeCount} }}</h5><br>
+                <div *ngFor="let tm of teamMembers" class="row g-1 mb-3">
+                    <div class="col-auto">
+                        <label for="employeeInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.TASK.NEW.EMP_LBL' | translate }}</label>
+                        <select [(ngModel)]="tm.employeeId" name="employeeId" class="form-select" id="employeeInput">
+                            <option selected disabled>{{ 'ADMIN_PANEL.USER.CHOOSE_OPTION' | translate }}</option>
+                            <option *ngFor="let e of employees" [value]="e.id">{{e.fullName}} - {{e.workingProfile}}</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="positionInput" class="form-label">{{ 'TEAM-CREATOR_PANEL.TASK.NEW.POSITION_LBL' | translate }}</label>
+                        <input type="text" class="form-control" [(ngModel)]="tm.position" name="position" id="positionInput">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">{{ 'BTN.SUBMIT' | translate }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="!formIsValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'TEAM-CREATOR_PANEL.TASK.NEW.TITLE_ERR' | translate }}
+</div>
+<div *ngIf="!taskParamsValid" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'TEAM-CREATOR_PANEL.TASK.NEW.PARAMS_ERR' | translate }}
+</div>
+<div *ngIf="!isUnique" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'TEAM-CREATOR_PANEL.TASK.NEW.SAME_EMP_ERR' | translate }}
+</div>
+<div *ngIf="!hasValues" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ 'TEAM-CREATOR_PANEL.TASK.NEW.NULL_EMP_ERR' | translate }}
+</div>

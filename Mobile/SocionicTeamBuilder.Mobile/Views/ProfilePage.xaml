@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SocionicTeamBuilder.Mobile.Views.ProfilePage"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             xmlns:root="clr-namespace:SocionicTeamBuilder.Mobile"
+             Title="{local:Translate ProfileTitle}">
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <TableView Intent="Settings">
+                <TableView.Root>
+                    <TableRoot>
+                        <TableSection Title="">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{local:Translate Login}"/>
+                                    <Entry x:Name="login" Text="{Binding Login}" WidthRequest="250" Margin="0,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{local:Translate Email}"/>
+                                    <Entry x:Name="email" Text="{Binding Email}" WidthRequest="250" Margin="0,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{local:Translate FullName}"/>
+                                    <Entry x:Name="fullName" Text="{Binding FullName}" WidthRequest="250" Margin="0,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout IsVisible="{x:Static root:App.IsEmployee}" Orientation="Horizontal">
+                                    <Label Text="{local:Translate SocionicType}"/>
+                                    <Entry x:Name="socionicType" IsReadOnly="True" Text="{Binding SocionicType}" WidthRequest="250" Margin="0,5,0,0"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{local:Translate DateOfBirth}"/>
+                                    <DatePicker MinimumDate="01/01/1956"
+                                                MaximumDate="01/01/2003"
+                                                Date="{Binding DateOfBirth}"
+                                                HorizontalOptions="EndAndExpand"
+                                                WidthRequest="100"
+                                    />
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                        <TableSection Title=" ">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <CheckBox x:Name="changePassword" CheckedChanged="changePassword_CheckedChanged"/>
+                                    <Label Text="{local:Translate ChangePassword}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView.Root>
+            </TableView>
+            <Button HorizontalOptions="Center" Text="{local:Translate SaveBtn}" Command="{Binding SaveCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,24 @@
+<div class="container mt-3">
+    <h4>{{ 'TEAM-CREATOR_PANEL.EMPLOYEE.TABLE_NAME' | translate }} {{enterprise}}</h4><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.EMPLOYEE.FULL_NAME_COL' | translate }}</th>
+            <th scope="col">{{ 'LOGIN.LOGIN_LBL' | translate }}</th>
+            <th scope="col">{{ 'ADMIN_PANEL.USER.EMAIL_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.EMPLOYEE.SOCIONIC_TYPE_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.EMPLOYEE.WORKING_PROFILE_COL' | translate }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of employees">
+                <td>{{e.fullName}}</td>
+                <td>{{e.login}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.socionicType}}</td>
+                <td>{{e.workingProfile}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="add()" type="button" class="btn btn-primary">{{ 'BTN.ADD' | translate }}</button>
+</div>

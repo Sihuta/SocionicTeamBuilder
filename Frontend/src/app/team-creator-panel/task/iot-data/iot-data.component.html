@@ -1,0 +1,42 @@
+<div class="container mt-3 mb-3">
+    <h4>{{teamMember.position}} {{employeeName}}</h4><br>
+      
+      <mat-form-field appearance="fill">      
+        <mat-label>{{ 'TEAM-CREATOR_PANEL.TEAM.FEEDBACK.DATA_RANGE_LBL' | translate }}</mat-label>      
+        <mat-date-range-input [rangePicker]="picker" [min]="minDate" [max]="maxDate">      
+          <input matStartDate placeholder="Start date" (dateChange)="startDateChanged($event)">
+          <input matEndDate placeholder="End date" (dateChange)="endDateChanged($event)">      
+        </mat-date-range-input>  
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>      
+        <mat-date-range-picker #picker></mat-date-range-picker>      
+      </mat-form-field>
+
+      <div style="display: block">
+        <canvas mdbChart
+          [chartType]="chartType"
+          [datasets]="chart1Datasets"
+          [labels]="chartLabels"
+          [colors]="chart1Colors"
+          [options]="chartOptions"
+          [legend]="true">
+        </canvas>
+        <br>
+        <canvas mdbChart
+          [chartType]="chartType"
+          [datasets]="chart2Datasets"
+          [labels]="chartLabels"
+          [colors]="chart1Colors"
+          [options]="chartOptions"
+          [legend]="true">
+        </canvas>
+        <br>
+        <canvas mdbChart
+          [chartType]="chartType"
+          [datasets]="chart3Datasets"
+          [labels]="chartLabels"
+          [colors]="chart1Colors"
+          [options]="chartOptions"
+          [legend]="true">
+        </canvas>
+      </div>
+</div>

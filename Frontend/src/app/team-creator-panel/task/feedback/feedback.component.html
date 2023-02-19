@@ -1,0 +1,38 @@
+<div class="container mt-3">
+    <h4>{{teamMember.position}} {{employeeName}}</h4><br>
+      
+      <mat-form-field appearance="fill">      
+        <mat-label>{{ 'TEAM-CREATOR_PANEL.TEAM.FEEDBACK.DATA_RANGE_LBL' | translate }}</mat-label>      
+        <mat-date-range-input [rangePicker]="picker" [min]="minDate" [max]="maxDate">      
+          <input matStartDate placeholder="Start date" (dateChange)="startDateChanged($event)">
+          <input matEndDate placeholder="End date" (dateChange)="endDateChanged($event)">      
+        </mat-date-range-input>  
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>      
+        <mat-date-range-picker #picker></mat-date-range-picker>      
+      </mat-form-field>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM.FEEDBACK.MOOD_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM.FEEDBACK.DETAILS_COL' | translate }}</th>
+            <th scope="col">{{ 'TEAM-CREATOR_PANEL.TEAM.FEEDBACK.DATETIME_COL' | translate }}</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of feedbacks">
+                <td>
+                    <img *ngIf="f.mood == 'Bad'" src="./assets/icons/bad-mood.svg" height="40" width="40" alt="Bad">
+                    <img *ngIf="f.mood == 'So-so'" src="./assets/icons/so-so-mood.svg" height="40" width="40" alt="So-so">
+                    <img *ngIf="f.mood == 'Good'" src="./assets/icons/good-mood.svg" height="40" width="40" alt="Good">
+                    <img *ngIf="f.mood == 'Great'" src="./assets/icons/great-mood.svg" height="40" width="40" alt="Great">
+                </td>
+                <td *ngIf="f.details == null; else details"><b>---</b></td>
+                <ng-template #details>
+                    <td>{{f.details}}</td>
+                </ng-template>
+                <td>{{f.dateTime | date:'short'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

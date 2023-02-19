@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocionicTeamBuilder.Mobile.Views.TeamPage"
+             xmlns:vm="clr-namespace:SocionicTeamBuilder.Mobile.ViewModels"  
+             xmlns:model="clr-namespace:SocionicTeamBuilder.Mobile.Models"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             Title="{local:Translate TeamTitle}">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="20" Margin="20">
+            <Button Text="{local:Translate FeedbackBtn}" Command="{Binding TapFeedbackCommand}" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="{local:Translate IotDataBtn}" Command="{Binding TapIotDataCommand}" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="10">
+            <Label Text="{local:Translate WayOfBuildingLbl}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black"
+                   WidthRequest="200" HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding WayOfBuilding}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+
+        <RefreshView x:DataType="vm:TeamViewModel" Command="{Binding LoadTeamCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Employees}"
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" x:DataType="model:Employee">
+                            <Frame Padding="10" OutlineColor="Black" HorizontalOptions="FillAndExpand">
+                                <StackLayout>
+                                    <Label Text="{Binding FullName}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="18" />
+                                    <Label Text="{Binding SocionicType}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="16" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </StackLayout>
+</ContentPage>

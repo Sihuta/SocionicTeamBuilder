@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocionicTeamBuilder.Mobile.Views.EmployeeDetailPage"
+             xmlns:local="clr-namespace:SocionicTeamBuilder.Mobile;assembly=SocionicTeamBuilder.Mobile"
+             Title="{local:Translate EmployeeInfoTitle}">
+
+    <StackLayout Spacing="10" Padding="15">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{local:Translate Login}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black"
+                   WidthRequest="200" HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding Login}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{local:Translate Email}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black"
+                   WidthRequest="200" HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding Email}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{local:Translate FullName}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black"
+                   WidthRequest="200" HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding FullName}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{local:Translate SocionicType}" FontSize="18"/>
+            <Frame Padding="10" OutlineColor="Black"
+                   WidthRequest="200" HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding SocionicType}"
+                       LineBreakMode="NoWrap"
+                       Style="{DynamicResource ListItemTextStyle}"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       FontAttributes="Italic"/>
+            </Frame>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
